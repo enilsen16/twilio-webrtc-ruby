@@ -4,8 +4,8 @@ require 'twilio-ruby'
 get '/sms' do
   response = Twilio::TwiML::Response.new do |r|
     r.Message do |m|
-      m.Body "Knock knock. Who's there? Art. Art who?"
-      m.Media 'http://linode.rabasa.com/knockknock.gif'
+      m.Body "Hi Cenk! How are you this morning?"
+      m.Media 'http://1.bp.blogspot.com/-vpE6uMJ37dk/UOScrne47aI/AAAAAAAAEL4/Ki-4IWO-SoY/s1600/ron-paul.gif'
     end
   end
   content_type 'text/xml'
@@ -28,5 +28,5 @@ get '/random' do
     end
   end
   content_type 'text/xml'
-  response.text  
+  response.text
 end
