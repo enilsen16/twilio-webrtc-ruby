@@ -41,20 +41,22 @@ Send a text message to your new Twilio number. You should get a canned response.
 
 Create a new TwiML app. Give it a name and set the Voice Request URL to http://yourdomain/random. Save the TwiML app and copy the App SID.
 
-Edit index.rb and paste the App SID into line 34. Save index.rb and restart Sinatra.
+Edit `index.rb` and paste the App SID into line 34. Save `index.rb` and restart Sinatra.
 
 Go to slide 12 and open up the JavaScript console. Enter the following commands:
 
+```
 $.ajax('/token').done(function(data) { Twilio.Device.setup(data); });
 Twilio.Device.connect(function(conn) { console.log(conn); window.stream = conn.mediaStream.stream; });
 Twilio.Device.connect();
+```
 When the browser asks for permission to access your microphone, say "Accept". Your browser will then dial a random person who sent you an SMS earlier and you'll be connected. Say "hi" to your friend.
 
 Visualize the call!
 
 Ok, don't hang up! Now it's time to visualize the call. Go to slide 13. In the JS console:
 
-visualizeMediaStream(window.stream);
+`visualizeMediaStream(window.stream);`
 
 You should see a lovely visualization of the audio in your microph
 
